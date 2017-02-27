@@ -7,6 +7,9 @@ services:
       - mysql
     volumes:
       - ./var/seafile:/seafile
+    ports:
+      - 9080:80
+
   mysql:
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: 1
