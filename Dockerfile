@@ -1,11 +1,11 @@
-FROM ubuntu:14.04
+FROM debian:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN \
     apt-get update && \
     apt-get install --no-install-recommends -y \
-        wget mysql-client supervisor nginx crudini \
+        wget mysql-client supervisor nginx crudini locales \
         python2.7 libpython2.7 python-setuptools python-imaging \
         python-ldap python-mysqldb python-memcache python-urllib3 && \
     update-locale LANG=C.UTF-8 && \
