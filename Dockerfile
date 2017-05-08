@@ -2,12 +2,15 @@ FROM debian:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+COPY etc/apt/sources.list.d/backports.list /etc/apt/sources.list.d/backports.list
+
 RUN \
     apt-get update && \
     apt-get install --no-install-recommends -y \
         wget mysql-client supervisor nginx crudini locales \
         python2.7 libpython2.7 python-setuptools python-imaging \
         python-ldap python-mysqldb python-memcache python-urllib3 && \
+    apt-get install -y certbot -t jessie-backports && \
     update-locale LANG=C.UTF-8 && \
     rm -rf /var/lib/apt/lists/* && \
     rm -f /etc/nginx/sites-enabled/*
