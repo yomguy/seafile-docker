@@ -67,7 +67,7 @@ EOF
 cat >> /seafile/conf/seahub_settings.py <<EOF
 ENABLE_SIGNUP = False
 ACTIVATE_AFTER_REGISTRATION = False
-FILE_SERVER_ROOT = '${SEAFILE_URL}/seafhttp'
+FILE_SERVER_ROOT = '/seafhttp'
 ENABLE_THUMBNAIL = True
 THUMBNAIL_ROOT = '/seafile/seahub-data/thumbnail/thumb/'
 EOF
